@@ -12,6 +12,9 @@ class ConcentrationViewController: UIViewController {
 
     var cardButtons = [UIButton]()
     let cardGrid = [[Int]](repeating: Array(repeating: 0, count: 4), count: 6)
+    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    var flipCount: Int = 0 { didSet { flipCountLabel.text = "Flips:\(flipCount)" }}
+    var emojiTheme = Emoji()
 
     let mainStackView: UIStackView = {
         let stackView = UIStackView(axis: .vertical, distribution: .fillEqually)
@@ -113,11 +116,29 @@ class ConcentrationViewController: UIViewController {
     }
 
     @objc func touchCard(_ sender: UIButton) {
-
+        flipCount += 1
+        guard let cardNumber = cardButtons.index(of: sender) else { fatalError("Chosen card was not found" )}
+        game.chooseCard(at: cardNumber)
+        updateViewFromModel()
     }
 
     @objc func newGame(_ sender: UIButton) {
+        game.newGame()
+        updateViewFromModel()
+    }
 
+    func updateViewFromModel() {
+        for index in cardButtons.indices {
+            let button = cardButtons[index]
+            let card = game.cards[index]
+            if card.isFaceUp {
+                button.setTitle(emojiTheme.emoji(for: card.identifier), for: .normal)
+                button.backgroundColor = .white
+            } else {
+                button.setTitle("", for: .normal)
+                button.backgroundColor = card.isMatched ? .clear : .yellow
+            }
+        }
     }
 }
 
