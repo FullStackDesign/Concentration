@@ -9,12 +9,31 @@
 import UIKit
 
 struct Emoji {
-    var emojiChoices = ["😀","😇","😍","😎","🤓","😡","😨","🤯","🤢","😈","😰","🤠","🤡","🤬"]
+    var emojiChoices = [String]()
     var emoji = [Int : String]()
+
+    struct Theme {
+        let emojis: [String]
+    }
+
+    let emojiThemes = [
+        Theme(emojis: ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🦄","🦁","🐸","🐵","🐷","🐧"]),
+        Theme(emojis: ["😀","😇","😍","😎","🤓","😡","😨","🤯","🤢","😈","😰","🤠","🤡","🤬"]),
+        Theme(emojis: ["🐳","🦀","🏖","🏝","🛥","🦑","🌊","🐋","🐙","🐚","🐟","🐠","🐡","🐬"]),
+        Theme(emojis: ["👷‍♀️","👷‍♂️","🚧","🏗","⛑","🔨","⛏","📋","🛑","⚠️","📐","⚒","🔦","🏢"]),
+        Theme(emojis: ["🦇","🦉","😱","😈","👹","🤡","👻","💀","🎃","🧛‍♀️","🕷","🕸","🧛‍♂️","🧟‍♀️"]),
+        Theme(emojis: ["🤶","🎄","🎅","❄️","☃️","🎁","🎀","🛍","🔔","😇","🚶‍♀️","👨‍👩‍👧‍👦","🧣","🧤"]),]
+
+    mutating func chooseNewRandomEmojiTheme() {
+        emoji.removeAll()
+        emojiChoices.removeAll()
+        let emojiTheme = emojiThemes[Int.random(in: 0..<emojiThemes.count)]
+        emojiChoices = emojiTheme.emojis
+    }
 
     mutating func emoji(for cardIdentifier: Int) -> String {
         if emoji[cardIdentifier] == nil, emojiChoices.count > 0 {
-            emoji[cardIdentifier] = emojiChoices.remove(at: Int(arc4random_uniform(UInt32(emojiChoices.count))))
+            emoji[cardIdentifier] = emojiChoices.remove(at: Int.random(in: 0..<emojiThemes.count))
         }
         return emoji[cardIdentifier] ?? "?"
     }

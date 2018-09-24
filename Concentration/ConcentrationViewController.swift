@@ -12,9 +12,12 @@ class ConcentrationViewController: UIViewController {
 
     var cardButtons = [UIButton]()
     let cardGrid = [[Int]](repeating: Array(repeating: 0, count: 4), count: 6)
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
-    var flipCount: Int = 0 { didSet { flipCountLabel.text = "Flips:\(flipCount)" }}
+    lazy var game = Concentration(numberOfPairsOfCards: (numberOfPairsOfCards))
     var emojiTheme = Emoji()
+
+    var numberOfPairsOfCards: Int {
+        return (cardButtons.count + 1) / 2
+    }
 
     let mainStackView: UIStackView = {
         let stackView = UIStackView(axis: .vertical, distribution: .fillEqually)
@@ -68,6 +71,7 @@ class ConcentrationViewController: UIViewController {
         textBubbleBackground.addSubview(mainStackView)
         setupButtonStackView()
         setupConstraints()
+        emojiTheme.chooseNewRandomEmojiTheme()
     }
 
     func setupConstraints() {
@@ -116,7 +120,6 @@ class ConcentrationViewController: UIViewController {
     }
 
     @objc func touchCard(_ sender: UIButton) {
-        flipCount += 1
         guard let cardNumber = cardButtons.index(of: sender) else { fatalError("Chosen card was not found" )}
         game.chooseCard(at: cardNumber)
         updateViewFromModel()
@@ -124,10 +127,13 @@ class ConcentrationViewController: UIViewController {
 
     @objc func newGame(_ sender: UIButton) {
         game.newGame()
+        emojiTheme.chooseNewRandomEmojiTheme()
         updateViewFromModel()
     }
 
     func updateViewFromModel() {
+        flipCountLabel.text? = "Flips:\(game.flipCount)"
+        gameScoreLabel.text? = "⭐️\(game.gameScore)"
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]

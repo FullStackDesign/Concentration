@@ -15,6 +15,7 @@
 		9C358FE020EAED1C006D1C57 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C358FDF20EAED1C006D1C57 /* Card.swift */; };
 		9C358FE220EAF3C0006D1C57 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C358FE120EAF3C0006D1C57 /* Concentration.swift */; };
 		9C358FE620EC926F006D1C57 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C358FE520EC926F006D1C57 /* Emoji.swift */; };
+		9C81225B2158746F004527E8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C81225A2158746F004527E8 /* Timer.swift */; };
 		9CCDBB932072E1CD00EEBC92 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDBB922072E1CD00EEBC92 /* UIStackView+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		9C358FDF20EAED1C006D1C57 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9C358FE120EAF3C0006D1C57 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		9C358FE520EC926F006D1C57 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		9C81225A2158746F004527E8 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		9CCDBB922072E1CD00EEBC92 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 				9C358FE520EC926F006D1C57 /* Emoji.swift */,
 				9C358FDF20EAED1C006D1C57 /* Card.swift */,
 				9C358FE120EAF3C0006D1C57 /* Concentration.swift */,
+				9C81225A2158746F004527E8 /* Timer.swift */,
 				9CCDBB922072E1CD00EEBC92 /* UIStackView+Extension.swift */,
 				9C2B1BE2206A020000E21A2D /* Main.storyboard */,
 				9C2B1BE5206A020000E21A2D /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			files = (
 				9C358FE620EC926F006D1C57 /* Emoji.swift in Sources */,
 				9C2B1BE1206A020000E21A2D /* ConcentrationViewController.swift in Sources */,
+				9C81225B2158746F004527E8 /* Timer.swift in Sources */,
 				9C358FE220EAF3C0006D1C57 /* Concentration.swift in Sources */,
 				9C2B1BDF206A020000E21A2D /* AppDelegate.swift in Sources */,
 				9CCDBB932072E1CD00EEBC92 /* UIStackView+Extension.swift in Sources */,
