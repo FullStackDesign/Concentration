@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C142CC821B447F400568451 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C142CC621B447F400568451 /* Gradient.swift */; };
+		9C142CC921B447F400568451 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C142CC721B447F400568451 /* Color+Extension.swift */; };
 		9C2B1BDF206A020000E21A2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B1BDE206A020000E21A2D /* AppDelegate.swift */; };
 		9C2B1BE1206A020000E21A2D /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B1BE0206A020000E21A2D /* ConcentrationViewController.swift */; };
 		9C2B1BE4206A020000E21A2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2B1BE2206A020000E21A2D /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C142CC621B447F400568451 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		9C142CC721B447F400568451 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		9C2B1BDB206A020000E21A2D /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2B1BDE206A020000E21A2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C2B1BE0206A020000E21A2D /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
@@ -45,10 +49,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C142CCA21B4490900568451 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C142CCB21B4491F00568451 /* Extensions */,
+				9C81225A2158746F004527E8 /* Timer.swift */,
+				9C142CC621B447F400568451 /* Gradient.swift */,
+			);
+			path = "Helper Files";
+			sourceTree = "<group>";
+		};
+		9C142CCB21B4491F00568451 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9CCDBB922072E1CD00EEBC92 /* UIStackView+Extension.swift */,
+				9C142CC721B447F400568451 /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C142CCC21B4494E00568451 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B1BE0206A020000E21A2D /* ConcentrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C142CCD21B449A200568451 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C358FDF20EAED1C006D1C57 /* Card.swift */,
+				9C358FE120EAF3C0006D1C57 /* Concentration.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C142CCE21B449B600568451 /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B1BDE206A020000E21A2D /* AppDelegate.swift */,
+				9C2B1BE2206A020000E21A2D /* Main.storyboard */,
+				9C2B1BE5206A020000E21A2D /* Assets.xcassets */,
+				9C2B1BE7206A020000E21A2D /* LaunchScreen.storyboard */,
+				9C2B1BEA206A020000E21A2D /* Info.plist */,
+			);
+			path = "Supported Files";
+			sourceTree = "<group>";
+		};
 		9C2B1BD2206A01FF00E21A2D = {
 			isa = PBXGroup;
 			children = (
 				9C2B1BDD206A020000E21A2D /* Concentration */,
+				9C358FE520EC926F006D1C57 /* Emoji.swift */,
 				9C2B1BDC206A020000E21A2D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,17 +117,10 @@
 		9C2B1BDD206A020000E21A2D /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
-				9C2B1BDE206A020000E21A2D /* AppDelegate.swift */,
-				9C2B1BE0206A020000E21A2D /* ConcentrationViewController.swift */,
-				9C358FE520EC926F006D1C57 /* Emoji.swift */,
-				9C358FDF20EAED1C006D1C57 /* Card.swift */,
-				9C358FE120EAF3C0006D1C57 /* Concentration.swift */,
-				9C81225A2158746F004527E8 /* Timer.swift */,
-				9CCDBB922072E1CD00EEBC92 /* UIStackView+Extension.swift */,
-				9C2B1BE2206A020000E21A2D /* Main.storyboard */,
-				9C2B1BE5206A020000E21A2D /* Assets.xcassets */,
-				9C2B1BE7206A020000E21A2D /* LaunchScreen.storyboard */,
-				9C2B1BEA206A020000E21A2D /* Info.plist */,
+				9C142CCA21B4490900568451 /* Helper Files */,
+				9C142CCD21B449A200568451 /* Model */,
+				9C142CCC21B4494E00568451 /* View */,
+				9C142CCE21B449B600568451 /* Supported Files */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -111,6 +157,7 @@
 				TargetAttributes = {
 					9C2B1BDA206A020000E21A2D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,12 +199,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C358FE620EC926F006D1C57 /* Emoji.swift in Sources */,
+				9C142CC921B447F400568451 /* Color+Extension.swift in Sources */,
 				9C2B1BE1206A020000E21A2D /* ConcentrationViewController.swift in Sources */,
 				9C81225B2158746F004527E8 /* Timer.swift in Sources */,
 				9C358FE220EAF3C0006D1C57 /* Concentration.swift in Sources */,
 				9C2B1BDF206A020000E21A2D /* AppDelegate.swift in Sources */,
 				9CCDBB932072E1CD00EEBC92 /* UIStackView+Extension.swift in Sources */,
 				9C358FE020EAED1C006D1C57 /* Card.swift in Sources */,
+				9C142CC821B447F400568451 /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,12 +349,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WM66848PK2;
-				INFOPLIST_FILE = Concentration/Info.plist;
+				INFOPLIST_FILE = "Concentration/Supported Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Full-Stack-Design.Concentration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -316,12 +365,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WM66848PK2;
-				INFOPLIST_FILE = Concentration/Info.plist;
+				INFOPLIST_FILE = "Concentration/Supported Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Full-Stack-Design.Concentration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

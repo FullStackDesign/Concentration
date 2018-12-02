@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import GameKit
 
 struct Concentration {
-    var cards = [Card]()
-    var chosenCards = [Int]()
-    var flipCount = 0
-    var gameScore = 0
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private(set) var cards = [Card]()
+    private var chosenCards = [Int]()
+    private(set) var flipCount = 0
+    private(set) var gameScore = 0
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
             for index in cards.indices {
@@ -42,7 +41,7 @@ struct Concentration {
             let card = Card()
             cards += [card, card]
         }
-        cards = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: cards) as! [Card]
+        cards = cards.shuffled()
     }
 
     mutating func chooseCard(at index: Int) {
@@ -66,7 +65,7 @@ struct Concentration {
         }
     }
 
-    mutating func containsChosenCard(indexes: Int...) {
+    private mutating func containsChosenCard(indexes: Int...) {
         for index in indexes {
             if !chosenCards.contains(index) {
                 chosenCards.append(index)
@@ -76,15 +75,7 @@ struct Concentration {
         }
     }
 
-    mutating func newGame() {
-        for index in cards.indices {
-            cards[index].isMatched = false
-            cards[index].isFaceUp = false
-        }
-        Card.identifierFactory = 0
-        flipCount = 0
-        gameScore = 0
-        chosenCards.removeAll()
-        cards = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: cards) as! [Card]
+    mutating func newGame(numberOfPairsOfCards: Int) {
+        self = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     }
 }

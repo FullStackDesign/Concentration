@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIStackView {
-    convenience init(axis: UILayoutConstraintAxis, distribution: UIStackViewDistribution) {
+    convenience init(axis: NSLayoutConstraint.Axis, distribution: UIStackView.Distribution) {
         self.init()
         self.axis = axis
         self.distribution = distribution

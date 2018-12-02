@@ -9,7 +9,7 @@
 import Foundation
 
 struct Timer {
-    static var startTime: Date?
+    private static var startTime: Date?
 
     static func startTimer() {
         if startTime == nil {
