@@ -33,7 +33,7 @@ struct Emoji {
 
     mutating func emoji(for cardIdentifier: Int) -> String {
         if emoji[cardIdentifier] == nil, emojiChoices.count > 0 {
-            emoji[cardIdentifier] = emojiChoices.remove(at: Int.random(in: 0..<emojiThemes.count))
+            emoji[cardIdentifier] = emojiChoices.remove(at: Int.random(in: 0..<emojiChoices.count))
         }
         return emoji[cardIdentifier] ?? "?"
     }
