@@ -1,13 +1,8 @@
 # Concentration Game
 
 > This project is based on assignment one of the Stanford CS193P iOS 11 Swift 4 course.
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=FpjB5Q1t3tI
-" target="_blank">
-<img src="http://img.youtube.com/vi/FpjB5Q1t3tI/maxresdefault.jpg" 
-alt="IMAGE ALT TEXT HERE" style="max-width: 100%; height: auto;" border="10" />
-</a>
 
-The purpose of this project is to show you how to complete all required tasks from the [assignment](https://drive.google.com/file/d/1u-b4agSQqKBROU5dTKryHz6nwdqDWS8G/view?usp=sharing). If you are interested in learning how to create this project from scratch than check out my video series(click image above).
+The purpose of this project is to show you how to complete all required tasks from the [assignment](https://drive.google.com/file/d/1u-b4agSQqKBROU5dTKryHz6nwdqDWS8G/view?usp=sharing). If you are interested in learning how to create this project from scratch than check out my video series.
 
 Some of the major differences of this project are:
 - Redesigning the project completely.
